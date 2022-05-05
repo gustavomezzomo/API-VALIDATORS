@@ -90,6 +90,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label fx:id="invalidDetailsMensagem" layoutX="88.0" layoutY="446.0" prefWidth="245.0" textFill="RED" />
             <TextArea fx:id="Mensagem" prefHeight="155.0" prefWidth="478.0" text="Data: &#10;" />
             <Button mnemonicParsing="false" onAction="#CM" style="-fx-background-color: ffb848; -fx-background-radius: 5;" text="Cadastrar" textFill="WHITE">
                <VBox.margin>

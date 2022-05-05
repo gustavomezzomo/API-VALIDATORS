@@ -39,6 +39,9 @@ public class TelaCadastroMensagemController extends BaseController{
     private TextField MeioComu;
 
     @FXML
+    private Label invalidDetailsMensagem;
+
+    @FXML
     private TextArea Mensagem;
 
     @FXML
@@ -50,10 +53,38 @@ public class TelaCadastroMensagemController extends BaseController{
         Stage stage = (Stage)Titulo.getScene().getWindow();
         viewFactory.closeStage(stage);
     }
+
+
+    protected
+    String successMessage = String.format("-fx-text-fill: GREEN;");
+    String errorMessage = String.format("-fx-text-fill: RED;");
+    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+    String successStyle = String.format("-fx-border-color: GREEN; -fx-border-width: 2; -fx-border-radius: 5;");
     
     @FXML
-    void CM(ActionEvent event) {
-        String titulo, categoria, meio_comunicacao, conteudo;
+    protected void CM (ActionEvent event) throws InterruptedException {
+
+        if (Categoria.getText().isEmpty() || MeioComu.getText().isEmpty() || Titulo.getText().isEmpty()) {
+            invalidDetailsMensagem.setStyle(errorMessage);
+            invalidDetailsMensagem.setText("Todos os campos são obrigatórios");
+  
+        if (Categoria.getText().isEmpty()) {
+            Categoria.setStyle(errorStyle);
+
+
+        } 
+
+        if (MeioComu.getText().isEmpty()) {
+            MeioComu.setStyle(errorStyle);
+
+
+        if (Titulo.getText().isEmpty()) {
+            Titulo.setStyle(errorStyle);
+
+        else {
+            invalidDetailsMensagem.setText("Tudo certo!");
+            invalidDetailsMensagem.setStyle(successMessage);
+            String titulo, categoria, meio_comunicacao, conteudo;
                     titulo = Titulo.getText();
                     categoria = Categoria.getText();
                     meio_comunicacao = MeioComu.getText();

@@ -63,8 +63,11 @@ public class TelaCadastroClienteController extends BaseController{
     private TextField Telefone;
 
     @FXML
+    private Label invalidDetailsCliente;
+
+    @FXML
     private VBox cadastroCliente;
-    
+
     @FXML
     void Voltar(ActionEvent event) {
         viewFactory.TelaInicialSuporte();
@@ -72,27 +75,79 @@ public class TelaCadastroClienteController extends BaseController{
         viewFactory.closeStage(stage);
     }
 
+
+    protected
+    String successMessage = String.format("-fx-text-fill: GREEN;");
+    String errorMessage = String.format("-fx-text-fill: RED;");
+    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+    String successStyle = String.format("-fx-border-color: GREEN; -fx-border-width: 2; -fx-border-radius: 5;");
+    
     @FXML
-    void CC(ActionEvent event) {
-        String cargo, nome, email, nome_empresa, projetos, telefone;
-                    
-                    cargo = Cargo.getText();
-                    nome = Nome.getText();
-                    email = Email.getText();
-                    nome_empresa = Empresa.getText();
-                    projetos = Projeto.getText();
-                    telefone = Telefone.getText();
+    protected void CC (ActionEvent event) throws InterruptedException {
 
-                    CadastroCliente objcadastro = new CadastroCliente();
-                    objcadastro.setCargo(cargo);
-                    objcadastro.setNome(nome);
-                    objcadastro.setEmail(email);
-                    objcadastro.setNome_empresa(nome_empresa);
-                    objcadastro.setProjetos(projetos);
-                    objcadastro.setTelefone(telefone);
+        if (Cargo.getText().isEmpty() || Email.getText().isEmpty() || Empresa.getText().isEmpty() || Nome.getText().isEmpty() || Projeto.getText().isEmpty() || Telefone.getText().isEmpty()) {
+            invalidDetailsCliente.setStyle(errorMessage);
+            invalidDetailsCliente.setText("Todos os campos são obrigatórios");
+  
 
-                    CadastroClienteDAO objcadastrodao = new CadastroClienteDAO();
-                    objcadastrodao.cadastrar(objcadastro);
+        if (Cargo.getText().isEmpty()) {
+            Cargo.setStyle(errorStyle);
+
+
+        } 
+
+        if (Email.getText().isEmpty()) {
+            Email.setStyle(errorStyle);
+
+
+        } 
+
+        if (Empresa.getText().isEmpty()) {
+            Empresa.setStyle(errorStyle);
+
+
+        } 
+
+        if (Nome.getText().isEmpty()) {
+          Nome.setStyle(errorStyle);
+
+
+        }
+        
+        if (Projeto.getText().isEmpty()) {
+          Projeto.setStyle(errorStyle);
+
+
+        } 
+
+        if (Telefone.getText().isEmpty()) {
+          Telefone.setStyle(errorStyle);
+
+
+        } 
+
+        else {
+          invalidDetailsCliente.setText("Tudo certo!");
+          invalidDetailsCliente.setStyle(successMessage);
+          String cargo, nome, email, nome_empresa, projetos, telefone;
+                  
+                  cargo = Cargo.getText();
+                  nome = Nome.getText();
+                  email = Email.getText();
+                  nome_empresa = Empresa.getText();
+                  projetos = Projeto.getText();
+                  telefone = Telefone.getText();
+
+                  CadastroCliente objcadastro = new CadastroCliente();
+                  objcadastro.setCargo(cargo);
+                  objcadastro.setNome(nome);
+                  objcadastro.setEmail(email);
+                  objcadastro.setNome_empresa(nome_empresa);
+                  objcadastro.setProjetos(projetos);
+                  objcadastro.setTelefone(telefone);
+
+                  CadastroClienteDAO objcadastrodao = new CadastroClienteDAO();
+                  objcadastrodao.cadastrar(objcadastro);
 
     }
                     

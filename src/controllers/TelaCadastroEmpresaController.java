@@ -37,7 +37,7 @@ public class TelaCadastroEmpresaController extends BaseController{
         viewFactory.closeStage(stage);
     }
     
-    // Strings which hold css elements to easily re-use in the application
+
     protected
     String successMessage = String.format("-fx-text-fill: GREEN;");
     String errorMessage = String.format("-fx-text-fill: RED;");
@@ -46,30 +46,30 @@ public class TelaCadastroEmpresaController extends BaseController{
     
     @FXML
     protected void CE (ActionEvent event) throws InterruptedException {
-        // In case the Username and Password fields are left blank then display the error message
+
         if (NomeEmpresa.getText().isEmpty() || Projeto.getText().isEmpty() || Responsavel.getText().isEmpty()) {
           invalidDetails.setStyle(errorMessage);
           invalidDetails.setText("Todos os campos são obrigatórios");
 
-        // quando Nome da empresa esta em branco
+
         if (NomeEmpresa.getText().isEmpty()) {
             NomeEmpresa.setStyle(errorStyle);
 
 
         } 
-        // quando projeto esta em branco
+
         if (Projeto.getText().isEmpty()) {
             Projeto.setStyle(errorStyle);
 
 
         } 
-        // quando responsavel esta em branco
-        if Responsavel.getText().isEmpty()) {
+o
+        if (Responsavel.getText().isEmpty()) {
             Responsavel.setStyle(errorStyle);
 
 
         } 
-        // If all login details are entered as required then display success message
+
         else {
             invalidDetails.setText("Tudo certo!");
             invalidDetails.setStyle(successMessage);
@@ -90,6 +90,8 @@ public class TelaCadastroEmpresaController extends BaseController{
                         objcadastro_empresadao.cadastrar_empresa(objcadastro_empresa);
 
 
+            }
+    
         }
     
     }
