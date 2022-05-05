@@ -90,41 +90,41 @@ public class TelaCadastroClienteController extends BaseController{
             invalidDetailsCliente.setText("Todos os campos são obrigatórios");
   
 
-        if (Cargo.getText().isEmpty()) {
-            Cargo.setStyle(errorStyle);
+            if (Cargo.getText().isEmpty()) {
+                Cargo.setStyle(errorStyle);
 
 
-        } 
+            } 
 
-        if (Email.getText().isEmpty()) {
-            Email.setStyle(errorStyle);
-
-
-        } 
-
-        if (Empresa.getText().isEmpty()) {
-            Empresa.setStyle(errorStyle);
+            if (Email.getText().isEmpty()) {
+                Email.setStyle(errorStyle);
 
 
-        } 
+            } 
 
-        if (Nome.getText().isEmpty()) {
-          Nome.setStyle(errorStyle);
-
-
-        }
-        
-        if (Projeto.getText().isEmpty()) {
-          Projeto.setStyle(errorStyle);
+            if (Empresa.getText().isEmpty()) {
+                Empresa.setStyle(errorStyle);
 
 
-        } 
+            } 
 
-        if (Telefone.getText().isEmpty()) {
-          Telefone.setStyle(errorStyle);
+            if (Nome.getText().isEmpty()) {
+            Nome.setStyle(errorStyle);
 
 
-        } 
+            }
+            
+            if (Projeto.getText().isEmpty()) {
+            Projeto.setStyle(errorStyle);
+
+
+            } 
+
+            if (Telefone.getText().isEmpty()) {
+            Telefone.setStyle(errorStyle);
+
+
+            } 
 
         else {
           invalidDetailsCliente.setText("Tudo certo!");
@@ -149,12 +149,12 @@ public class TelaCadastroClienteController extends BaseController{
                   CadastroClienteDAO objcadastrodao = new CadastroClienteDAO();
                   objcadastrodao.cadastrar(objcadastro);
 
-    }
-                    
-	    
-	   
+            }
 
-            
+        }
+                    
+    }
+	   
 } 
 	    
 	    	

@@ -68,18 +68,22 @@ public class TelaCadastroMensagemController extends BaseController{
             invalidDetailsMensagem.setStyle(errorMessage);
             invalidDetailsMensagem.setText("Todos os campos são obrigatórios");
   
-        if (Categoria.getText().isEmpty()) {
-            Categoria.setStyle(errorStyle);
+            if (Categoria.getText().isEmpty()) {
+                Categoria.setStyle(errorStyle);
 
 
-        } 
+            } 
 
-        if (MeioComu.getText().isEmpty()) {
-            MeioComu.setStyle(errorStyle);
+            if (MeioComu.getText().isEmpty()) {
+                MeioComu.setStyle(errorStyle);
+
+            }
 
 
-        if (Titulo.getText().isEmpty()) {
-            Titulo.setStyle(errorStyle);
+            if (Titulo.getText().isEmpty()) {
+                Titulo.setStyle(errorStyle);
+
+            }
 
         else {
             invalidDetailsMensagem.setText("Tudo certo!");
@@ -99,8 +103,10 @@ public class TelaCadastroMensagemController extends BaseController{
                     Cadastro_mensagemDAO objcadastro_mensagemdao = new Cadastro_mensagemDAO();
                     objcadastro_mensagemdao.cadastrar_mensagem(objcadastro_mensagem);
 
-    }
-                
-	    
+            }
 
+        }
+
+    }
+    
 }

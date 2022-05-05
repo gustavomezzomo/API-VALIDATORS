@@ -52,23 +52,23 @@ public class TelaCadastroEmpresaController extends BaseController{
           invalidDetails.setText("Todos os campos são obrigatórios");
 
 
-        if (NomeEmpresa.getText().isEmpty()) {
-            NomeEmpresa.setStyle(errorStyle);
+            if (NomeEmpresa.getText().isEmpty()) {
+                NomeEmpresa.setStyle(errorStyle);
 
 
-        } 
+            } 
 
-        if (Projeto.getText().isEmpty()) {
-            Projeto.setStyle(errorStyle);
-
-
-        } 
-o
-        if (Responsavel.getText().isEmpty()) {
-            Responsavel.setStyle(errorStyle);
+            if (Projeto.getText().isEmpty()) {
+                Projeto.setStyle(errorStyle);
 
 
-        } 
+            } 
+
+            if (Responsavel.getText().isEmpty()) {
+                Responsavel.setStyle(errorStyle);
+
+
+            } 
 
         else {
             invalidDetails.setText("Tudo certo!");
