@@ -93,42 +93,50 @@ public class TelaCadastroClienteController extends BaseController{
             if (Cargo.getText().isEmpty()) {
                 Cargo.setStyle(errorStyle);
 
-
             } 
+            else Cargo.setStyle(successStyle);
 
             if (Email.getText().isEmpty()) {
                 Email.setStyle(errorStyle);
 
-
             } 
+            else Email.setStyle(successStyle);
 
             if (Empresa.getText().isEmpty()) {
                 Empresa.setStyle(errorStyle);
 
-
             } 
+            else Empresa.setStyle(successStyle);
 
             if (Nome.getText().isEmpty()) {
             Nome.setStyle(errorStyle);
 
-
             }
+            else Nome.setStyle(successStyle);
             
             if (Projeto.getText().isEmpty()) {
             Projeto.setStyle(errorStyle);
 
-
             } 
+            else Projeto.setStyle(successStyle);
 
             if (Telefone.getText().isEmpty()) {
             Telefone.setStyle(errorStyle);
 
-
             } 
+            else Telefone.setStyle(successStyle);
+            
+        }
 
         else {
           invalidDetailsCliente.setText("Tudo certo!");
           invalidDetailsCliente.setStyle(successMessage);
+          Cargo.setStyle(successStyle);
+          Email.setStyle(successStyle);
+          Empresa.setStyle(successStyle);
+          Nome.setStyle(successStyle);
+          Projeto.setStyle(successStyle);
+          Telefone.setStyle(successStyle);
           String cargo, nome, email, nome_empresa, projetos, telefone;
                   
                   cargo = Cargo.getText();
@@ -155,7 +163,6 @@ public class TelaCadastroClienteController extends BaseController{
                     
     }
 	   
-} 
 	    
 	    	
 	    

@@ -55,24 +55,28 @@ public class TelaCadastroEmpresaController extends BaseController{
             if (NomeEmpresa.getText().isEmpty()) {
                 NomeEmpresa.setStyle(errorStyle);
 
-
             } 
+            else NomeEmpresa.setStyle(successStyle);
 
             if (Projeto.getText().isEmpty()) {
                 Projeto.setStyle(errorStyle);
 
-
             } 
+            else Projeto.setStyle(successStyle);
 
             if (Responsavel.getText().isEmpty()) {
                 Responsavel.setStyle(errorStyle);
 
-
             } 
+            else Responsavel.setStyle(successStyle);
+        }
 
         else {
             invalidDetails.setText("Tudo certo!");
             invalidDetails.setStyle(successMessage);
+            NomeEmpresa.setStyle(successStyle);
+            Projeto.setStyle(successStyle);
+            Responsavel.setStyle(successStyle);
             String nome_empresa, responsavel, nome_projeto;
 
                         nome_empresa = NomeEmpresa.getText();
@@ -91,12 +95,12 @@ public class TelaCadastroEmpresaController extends BaseController{
 
 
             }
+
     
         }
     
     }
     
-}
 
 
 

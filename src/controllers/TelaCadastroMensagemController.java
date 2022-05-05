@@ -71,23 +71,30 @@ public class TelaCadastroMensagemController extends BaseController{
             if (Categoria.getText().isEmpty()) {
                 Categoria.setStyle(errorStyle);
 
-
             } 
+             else Categoria.setStyle(successStyle);
 
             if (MeioComu.getText().isEmpty()) {
                 MeioComu.setStyle(errorStyle);
 
             }
+             else MeioComu.setStyle(successStyle);
 
 
             if (Titulo.getText().isEmpty()) {
                 Titulo.setStyle(errorStyle);
 
             }
+             else Titulo.setStyle(successStyle);
+        
+        }
 
         else {
             invalidDetailsMensagem.setText("Tudo certo!");
             invalidDetailsMensagem.setStyle(successMessage);
+            Categoria.setStyle(successStyle);
+            MeioComu.setStyle(successStyle);
+            Titulo.setStyle(successStyle);
             String titulo, categoria, meio_comunicacao, conteudo;
                     titulo = Titulo.getText();
                     categoria = Categoria.getText();
@@ -109,4 +116,3 @@ public class TelaCadastroMensagemController extends BaseController{
 
     }
     
-}
