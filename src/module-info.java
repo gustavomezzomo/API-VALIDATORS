@@ -8,6 +8,7 @@ module Pro4Tech {
 	requires javafx.base;
 	requires java.sql;
         requires mysql.connector.java;
+    requires openjfx;
 	
 	opens fxml;
 	opens controllers;

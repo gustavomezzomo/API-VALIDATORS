@@ -47,67 +47,32 @@ public class TelaCadastroEmpresaController extends BaseController{
     @FXML
     protected void CE (ActionEvent event) throws InterruptedException {
         // In case the Username and Password fields are left blank then display the error message
-        if (NomeEmpresa.getText().isEmpty() && Projeto.getText().isEmpty() && Responsavel.getText().isEmpty()) {
+        if (NomeEmpresa.getText().isEmpty() || Projeto.getText().isEmpty() || Responsavel.getText().isEmpty()) {
           invalidDetails.setStyle(errorMessage);
+          invalidDetails.setText("Todos os campos são obrigatórios");
 
-        // quando tudo esta em branco
-        if (NomeEmpresa.getText().isEmpty() && Projeto.getText().isEmpty() && Responsavel.getText().isEmpty()) {
-            invalidDetails.setText("Os campos são obrigatórios");
+        // quando Nome da empresa esta em branco
+        if (NomeEmpresa.getText().isEmpty()) {
             NomeEmpresa.setStyle(errorStyle);
+
+
+        } 
+        // quando projeto esta em branco
+        if (Projeto.getText().isEmpty()) {
             Projeto.setStyle(errorStyle);
+
+
+        } 
+        // quando responsavel esta em branco
+        if Responsavel.getText().isEmpty()) {
             Responsavel.setStyle(errorStyle);
 
 
-        } else // quando nome da empresa e projeto estao em branco
-        if (NomeEmpresa.getText().isEmpty() && Projeto.getText().isEmpty()) {
-            NomeEmpresa.setStyle(errorStyle);
-            Projeto.setStyle(errorStyle);
-            invalidDetails.setText("Os campos são obrigatórios");
-            Responsavel.setStyle(successStyle);
-
-
-        } else // quando projeto e responsavel estao em branco
-            if (Projeto.getText().isEmpty() && Responsavel.getText().isEmpty()) {
-                Projeto.setStyle(errorStyle);
-                Responsavel.setStyle(errorStyle);
-                invalidDetails.setText("Os campos são obrigatórios");
-                NomeEmpresa.setStyle(successStyle);
-
-
-            }
-        } else // quando nome da empresa e responsavel estao em branco
-            if (NomeEmpresa.getText().isEmpty() && Responsavel.getText().isEmpty()) {
-                NomeEmpresa.setStyle(errorStyle);
-                Responsavel.setStyle(errorStyle);
-                invalidDetails.setText("Os campos são obrigatórios");
-                Projeto.setStyle(successStyle);
-
-
-        } else // quando nome da empresa esta em branco
-            if (NomeEmpresa.getText().isEmpty()) {
-                NomeEmpresa.setStyle(errorStyle);
-                invalidDetails.setText("O campo é obrigatório");
-                Projeto.setStyle(successStyle); 
-                Responsavel.setStyle(successStyle);
-                
-        } else // quando projeto esta em branco
-            if (Projeto.getText().isEmpty()) {
-                Projeto.setStyle(errorStyle);
-                invalidDetails.setText("O campo é obrigatório");
-                NomeEmpresa.setStyle(successStyle); 
-                Responsavel.setStyle(successStyle);
-                
-        } else // quando responsavel esta em branco
-            if (Responsavel.getText().isEmpty()) {
-                Responsavel.setStyle(errorStyle);
-                invalidDetails.setText("O campo é obrigatório");
-                NomeEmpresa.setStyle(successStyle); 
-                Projeto.setStyle(successStyle);
-
-          }
+        } 
         // If all login details are entered as required then display success message
         else {
             invalidDetails.setText("Tudo certo!");
+            invalidDetails.setStyle(successMessage);
             String nome_empresa, responsavel, nome_projeto;
 
                         nome_empresa = NomeEmpresa.getText();
